@@ -1,7 +1,7 @@
 # AT24CX Library
 
 Library for using the Atmels EEPROM AT24C32/AT24C64/AT24C128/AT24C256/AT24C512 in Arduino projects.
-See <http://oberguru.net/elektronik/eeprom/at24cx-at24c32-at24c64-at24c128-at24c256-at24c512.html> for definitons and differences.
+See <https://oberguru.net/elektronik/eeprom/at24cx-at24c32-at24c64-at24c128-at24c256-at24c512.html> for definitons and differences.
 
 Written by Christian Paul, 2014 - 2015.
 This software is released under the terms of the MIT license.
