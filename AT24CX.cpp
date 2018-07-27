@@ -112,13 +112,22 @@ AT24C512::AT24C512(byte index) {
 void AT24CX::init(byte index, byte pageSize) {
 	_id = AT24CX_ID | (index & 0x7);
 	_pageSize = pageSize;
-	Wire.begin();
+	_wireLibStarted = false;
 }
+
+void AT24CX::startWireIfNeeded() {
+	if(!_wireLibStarted) {
+		_wireLibStarted = true;
+		Wire.begin();
+	}
+}
+
 
 /**
  * Write byte
  */
 void AT24CX::write(unsigned int address, byte data) {
+	startWireIfNeeded();
     Wire.beginTransmission(_id);
     if(Wire.endTransmission()==0) {
     	Wire.beginTransmission(_id);
@@ -231,6 +240,7 @@ void AT24CX::write(unsigned int address, byte *data, int n) {
  * Write sequence of n bytes from offset
  */
 void AT24CX::write(unsigned int address, byte *data, int offset, int n) {
+	startWireIfNeeded();
     Wire.beginTransmission(_id);
     if (Wire.endTransmission()==0) {
      	Wire.beginTransmission(_id);
@@ -249,6 +259,7 @@ void AT24CX::write(unsigned int address, byte *data, int offset, int n) {
 byte AT24CX::read(unsigned int address) {
 	byte b = 0;
 	int r = 0;
+	startWireIfNeeded();
 	Wire.beginTransmission(_id);
     if (Wire.endTransmission()==0) {
      	Wire.beginTransmission(_id);
@@ -289,6 +300,7 @@ void AT24CX::read(unsigned int address, byte *data, int n) {
  * Read sequence of n bytes to offset
  */
 void AT24CX::read(unsigned int address, byte *data, int offset, int n) {
+	startWireIfNeeded();
 	Wire.beginTransmission(_id);
     if (Wire.endTransmission()==0) {
      	Wire.beginTransmission(_id);

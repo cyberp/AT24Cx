@@ -60,11 +60,13 @@ public:
 protected:
 	void init(byte index, byte pageSize);
 private:
+	void startWireIfNeeded();
 	void read(unsigned int address, byte *data, int offset, int n);
 	void write(unsigned int address, byte *data, int offset, int n);
 	int _id;
 	byte _b[8];
 	byte _pageSize;
+	byte _wireLibStarted;
 };
 
 // AT24C32 class definiton
