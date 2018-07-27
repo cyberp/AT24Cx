@@ -1,0 +1,42 @@
+#######################################
+# Syntax Coloring Map For AT24Cx lib
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+AT24CX		KEYWORD1
+AT24CX32	KEYWORD1
+AT24CX64	KEYWORD1
+AT24CX128	KEYWORD1
+AT24CX256	KEYWORD1
+AT24CX512	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+write		KEYWORD2
+writeInt	KEYWORD2
+writeLong	KEYWORD2
+writeFloat	KEYWORD2
+writeDouble	KEYWORD2
+writeChars	KEYWORD2
+
+read		KEYWORD2
+readInt		KEYWORD2
+readLong	KEYWORD2
+readFloat	KEYWORD2
+readDouble	KEYWORD2
+readChars	KEYWORD2
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+
+
+#######################################
+# Constants (LITERAL1)
+#######################################
